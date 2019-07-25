@@ -8,18 +8,17 @@ class ListItem extends React.Component {
     return (
       <View style={styles.container}>
         <View style={{ borderBottomWidth: 1, borderColor: '#D3D3D3' }}>
-          <Text style={styles.movie}>{this.props.item.title}</Text>
+        <Text style={styles.title}>{this.props.item.title}</Text>
         </View>
         <View style={{ padding: 5 }}>
           <Image style={styles.pic} source={{ uri: this.props.item.image }} />
         </View>
-        <View style={{ borderTopWidth: 1, borderColor: '#D3D3D3' }}>
-          <TouchableOpacity
-            style={styles.info}
+        <View  style={{ borderTopWidth: 1, borderTopColor: '#D3D3D3' }}>
+          <TouchableOpacity style={styles.info}
             onPress={() => {
               Linking.openURL(this.props.item.url);
             }}>
-            More Info
+            <Text style={{ color: '#1E90FF', textAlign: 'center' }}>More Info</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -50,8 +49,8 @@ const styles = StyleSheet.create({
     borderColor: '#D3D3D3',
     marginBottom: 12,
   },
-  movie: {
-    marginVertical: 12,
+  title: {
+    marginVertical: 5,
     marginLeft: 5,
     fontSize: 15,
   },
@@ -65,10 +64,8 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 5,
     marginHorizontal: 12,
-    color: '#228FCF',
-    borderColor: '#228FCF',
+    borderColor: '#1E90FF',
     borderRadius: 5,
     borderWidth: 1,
-    textAlign: 'center',
   },
 });
